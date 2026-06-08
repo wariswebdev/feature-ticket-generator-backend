@@ -3,26 +3,26 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeor
 @Entity('tickets')
 export class TicketEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  featureGroupName: string;
+  featureGroupName!: string;
 
   @Column('text')
-  featureSummary: string;
+  featureSummary!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column('text')
-  technicalDescription: string;
+  technicalDescription!: string;
 
   @Column('int')
-  estimatedPoints: number;
+  estimatedPoints!: number;
 
   @Column()
-  priority: string;
+  priority!: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 }

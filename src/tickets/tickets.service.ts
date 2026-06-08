@@ -18,9 +18,10 @@ export class TicketsService {
       });
 
       return object;
-    } catch (error) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown compilation exception';
       throw new InternalServerErrorException(
-        `Failed to communicate with Gemini API: ${error.message}`,
+        `Failed to communicate with Gemini API: ${errorMessage}`,
       );
     }
   }
